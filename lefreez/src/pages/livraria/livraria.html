@@ -7,10 +7,10 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar (ionInput)="getLivro($event)"></ion-searchbar>
+  <ion-searchbar (ionInput)="getLivroLivraria($event)"></ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let livro of livros">
-      {{ livro }}
+    <ion-item *ngFor="let livroLivraria of livrariaLivros">
+      {{ livroLivraria }}
     </ion-item>
   </ion-list>
 </ion-content>
