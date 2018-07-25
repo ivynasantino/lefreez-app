@@ -5,9 +5,10 @@ import { NavController } from 'ionic-angular';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
 
-  livros: string[];
+  livros = [];
 
   constructor(public navCtrl: NavController) {
     this.iniciaLivros();
@@ -15,12 +16,26 @@ export class HomePage {
 
   iniciaLivros() {
     this.livros = [
-      'Dom casmurro',
-      'Laranja mecânica',
-      'O alienista',
-      'O bosque selvagem',
-      'O pequeno príncipe'
-    ];
+      { 'titulo': 'Dom casmurro',
+        'texto': "Capitu traiu ou nao Bentinho? Bla bla..."
+      },
+
+      {'titulo': 'Laranja mecânica',
+        'texto': "Bem legal, tenho que terminar de ler"
+      },
+
+      {'titulo': 'O alienista',
+        'texto': 'é de Machado de Assis'
+      },
+
+      {'titulo': 'O bosque selvagem',
+        'texto': 'livro escolhido para amostra'
+      },
+
+      {'titulo': 'O pequeno príncipe',
+        'texto': 'Tambem tenho que terminar de ler'
+      }
+    ]
   }
 
   getLivro(liv: any) {
@@ -36,4 +51,10 @@ export class HomePage {
 
   }
 
+  selecionaLivro(liv) {
+    var livro = this.getLivro(liv);
+    return livro;
+  }
+
 }
+
