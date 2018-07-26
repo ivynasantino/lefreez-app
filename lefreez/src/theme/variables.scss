@@ -34,11 +34,13 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
+  primary:    #FF7043,
+  secondary:  #FFA270,
+  tertiary:   #FFCBAE,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222222,
+  cinza1:     #4D4D4D,
+  cinza2:     #ADADAD
 );
 
 
@@ -86,3 +88,17 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+
+// muda a cor das tabs
+
+$toolbar-md-background: color($colors, primary);
+
+$tabbar-md-background: color($colors, light);
+
+$tab-button-md-active-color: color($colors, primary);
+$tab-button-md-inactive-color: color($colors, cinza2);
+
+$toolbar-md-active-color: color($colors, light);
+$toolbar-md-inactive-color: color($colors, light);
+$segment-button-md-text-color-activated: color($colors, light);
