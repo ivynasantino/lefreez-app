@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { LivroPage } from '../livro/livro';
 
 @Component({
   selector: 'page-home',
@@ -8,14 +9,14 @@ import { NavController } from 'ionic-angular';
 
 export class HomePage {
 
-  livros = [];
+  //private livros;
 
   constructor(public navCtrl: NavController) {
-    this.iniciaLivros();
+    //this.iniciaLivros();
   }
 
-  iniciaLivros() {
-    this.livros = [
+ // iniciaLivros() {
+    livros:any = [
       { 'titulo': 'Dom casmurro',
         'texto': "Capitu traiu ou nao Bentinho? Bla bla..."
       },
@@ -36,10 +37,20 @@ export class HomePage {
         'texto': 'Tambem tenho que terminar de ler'
       }
     ]
-  }
 
-  getLivro(liv: any) {
-    this.iniciaLivros();
+  getLivro(liv) {
+    //this.iniciaLivros()
+    console.log(liv.titulo)
+    console.log(liv.texto)
+
+    this.navCtrl.push(LivroPage, liv)
+
+
+    //for (var _i = 0; _i < this.livros.length; _i++) {
+      //console.log(this.livros.indexOf(_i));
+    //}
+
+    /*this.iniciaLivros();
     
     const val = liv.target.value;
 
@@ -47,7 +58,7 @@ export class HomePage {
       this.livros = this.livros.filter(livro => {
         return (livro.toLocaleLowerCase().indexOf(val.toLocaleLowerCase()) > -1);
       })
-    }
+    }*/
 
   }
 

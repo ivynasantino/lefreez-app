@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DesejosPage } from '../pages/desejos/desejos';
 import { LivrariaPage } from '../pages/livraria/livraria';
+import { LivroPage } from '../pages/livro/livro';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LivrariaPage } from '../pages/livraria/livraria';
     DesejosPage,
     HomePage,
     LivrariaPage,
-    TabsPage
+    TabsPage,
+    LivroPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { LivrariaPage } from '../pages/livraria/livraria';
     DesejosPage,
     HomePage,
     LivrariaPage,
-    TabsPage
+    TabsPage,
+    LivroPage
   ],
   providers: [
     StatusBar,
