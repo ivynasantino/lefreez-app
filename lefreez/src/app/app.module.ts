@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { VideoPlayer } from '@ionic-native/video-player';
 import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
@@ -11,6 +12,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { DesejosPage } from '../pages/desejos/desejos';
 import { LivrariaPage } from '../pages/livraria/livraria';
 import { LivroPage } from '../pages/livro/livro';
+import { Camera } from '@ionic-native/camera';
+import { StreamingMedia } from '@ionic-native/streaming-media';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,10 @@ import { LivroPage } from '../pages/livro/livro';
   providers: [
     StatusBar,
     SplashScreen,
+    VideoPlayer,
+    Camera,
+    StreamingMedia,
+    YoutubeVideoPlayer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
