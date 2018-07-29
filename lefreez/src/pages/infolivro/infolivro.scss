@@ -1,0 +1,41 @@
+page-infolivro {
+p {
+    line-height: 100%;
+}
+
+p.titulo {
+    font-size: 20px;
+    color: color($colors, cinza1);
+}
+
+p.autor {
+    font-size: 17px;
+    color: color($colors, cinza2);
+}
+
+p.sinopse-titulo {
+    font-size: 20px;
+    color: color($colors, cinza1);
+    margin-bottom: 0px;
+}
+
+p.sinopse {
+    line-height: 100%;
+}
+
+.botoes {
+    position: absolute;
+    bottom: 10px;
+}
+
+ion-col button {
+    background-color: transparent;
+}
+
+ion-col button ion-icon{
+    font-size: 30px;
+    color: color($colors, light);
+    padding: 5px 10px;
+    background-color: color($colors, primary);
+}
+}

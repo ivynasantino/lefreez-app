@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Informações</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<!--
+<div id="caixa">
+    <img src="http://ap.imagensbrasil.org/images/imagens-lobos.jpg">
+    <div id="conteudo">
+      <p class="titulo">Livro</p>
+      <p class="autor">Autor</p>
+      <div class="bottom">aaaa</div>
+    </div>
+</div>
+-->
+
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <img src="{{ url }}">
+    </ion-col>
+    <ion-col>
+        <p class="titulo">{{ titulo }}</p>
+        <p class="autor">{{ autor }}</p>
+        <div class="botoes">
+          <button><ion-icon name="cart"></ion-icon></button>
+          <button><ion-icon name="heart"></ion-icon></button>
+        </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <p class="sinopse-titulo">Sinopse</p>
+    <p align="justify" class="sinopse">{{ sinopse }}</p>
+  </ion-row>
+</ion-grid>
+
+
+</ion-content>

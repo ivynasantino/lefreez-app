@@ -13,6 +13,7 @@ import { LivroPage } from '../pages/livro/livro';
 import { Camera } from '@ionic-native/camera';
 import { StreamingMedia } from '@ionic-native/streaming-media';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+import { InfolivroPage } from '../pages/infolivro/infolivro';
 import { File } from '@ionic-native/file'
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 
@@ -24,7 +25,8 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
     HomePage,
     LivrariaPage,
     TabsPage,
-    LivroPage
+    LivroPage,
+    InfolivroPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
     HomePage,
     LivrariaPage,
     TabsPage,
-    LivroPage
+    LivroPage,
+    InfolivroPage
   ],
   providers: [
     StatusBar,
