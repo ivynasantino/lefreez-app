@@ -15,11 +15,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class InfolivroPage {
 
+  titulo:String;
+  autor:String;
+  url:String;
+  sinopse:String;
+  preco:String;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.titulo = navParams.data.titulo;
+    this.autor = navParams.data.autor;
+    this.url = navParams.data.url;
+    this.sinopse = navParams.data.sinopse;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfolivroPage');
   }
+
 
 }

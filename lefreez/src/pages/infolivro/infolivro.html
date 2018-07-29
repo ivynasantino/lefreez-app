@@ -22,16 +22,20 @@
 <ion-grid>
   <ion-row>
     <ion-col>
-      <img src="http://ap.imagensbrasil.org/images/imagens-lobos.jpg" height="250px">
+      <img src="{{ url }}">
     </ion-col>
     <ion-col>
-        <p class="titulo">titulo</p>
-        <p class="autor">autor</p>
+        <p class="titulo">{{ titulo }}</p>
+        <p class="autor">{{ autor }}</p>
         <div class="botoes">
           <button><ion-icon name="cart"></ion-icon></button>
-          <button><ion-icon name="home"></ion-icon></button>
+          <button><ion-icon name="heart"></ion-icon></button>
         </div>
     </ion-col>
+  </ion-row>
+  <ion-row>
+    <p class="sinopse-titulo">Sinopse</p>
+    <p align="justify" class="sinopse">{{ sinopse }}</p>
   </ion-row>
 </ion-grid>
 
