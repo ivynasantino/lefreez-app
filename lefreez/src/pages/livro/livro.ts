@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { VideoPlayer } from '@ionic-native/video-player';
+import { VideoPlayer, VideoOptions } from '@ionic-native/video-player';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+import { File } from '@ionic-native/file'
+import { Platform } from 'ionic-angular/platform/platform';
+import { errorHandler } from '@angular/platform-browser/src/browser';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
 /**
  * Generated class for the LivroPage page.
  *
@@ -21,11 +25,15 @@ export class LivroPage {
   livro;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private videoPlayer: VideoPlayer,
-    private camera: Camera, private streamingMedia: StreamingMedia, private youtube: YoutubeVideoPlayer) {
+    private camera: Camera, private streamingMedia: StreamingMedia, private youtube: YoutubeVideoPlayer,
+    private file: File, private platform: Platform, private photoViewer: PhotoViewer) {
     console.log(navParams.data);
     this.livro = navParams.data
 
   }
+
+  
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LivroPage');
@@ -39,26 +47,61 @@ export class LivroPage {
     mediaType: this.camera.MediaType.PICTURE
   }
 
-  print(){
+  livro1(){
+    console.log(this.platform.is("cordova"));
+    
+    console.log(this.file.applicationDirectory)
+    console.log(this.file.externalApplicationStorageDirectory)
 
-    this.youtube.openVideo('https://www.youtube.com/watch?v=rmeTj9gTbNo&t=2s');
+   let options: VideoOptions = {
+     volume: 0.5
+     
+    }
 
-    /*let options: StreamingVideoOptions = {
-      successCallback: () => { console.log('Finished Video') },
-      errorCallback: (e) => { console.log('Error: ', e) },
-      orientation: 'portrait'
-    };
- 
-    // http://www.sample-videos.com/
-    this.streamingMedia.playVideo('file://android_asset/www/assets/videos/poutrona.mp4', options);*/
+    /*var path = this.file.applicationDirectory + 'www/assets/videos/laranja-mecanica.png';
+    console.log(path);
 
-    //this.camera.getPicture(this.options).then((imageData) => {
-     /* // imageData is either a base64 encoded string or a file URI
-      // If it's base64 (DATA_URL):
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
-     }, (err) => {
-      // Handle error
-     });*/
+     //http://www.sample-videos.com/
+    this.streamingMedia.playVideo(path, options);*/
+
+    this.videoPlayer.play("file:///android_asset/www/assets/imgs/poutrona.mp4",options).then(() => {
+      console.log('video completed');
+      }).catch(err => {
+      console.log(err);
+      });    
+  }
+
+  livro2(){
+    console.log(this.platform.is("cordova"));
+    
+    console.log(this.file.applicationDirectory)
+    console.log(this.file.externalApplicationStorageDirectory)
+
+   let options: VideoOptions = {
+     volume: 0.5
+     
+    }
+
+    /*var path = this.file.applicationDirectory + 'www/assets/videos/laranja-mecanica.png';
+    console.log(path);
+
+     //http://www.sample-videos.com/
+    this.streamingMedia.playVideo(path, options);*/
+
+    this.videoPlayer.play("file:///android_asset/www/assets/imgs/Montanhas.mp4",options).then(() => {
+      console.log('video completed');
+      }).catch(err => {
+      console.log(err);
+      });    
+  }
+
+  image1(){
+    var options = {
+      share: true, // default is false
+      closeButton: false, // default is true
+      copyToReference: true // default is false
+  };
+  this.photoViewer.show('file:///android_asset/www/assets/imgs/a.jpg', 'Optional Title', options);
   }
 
 }
