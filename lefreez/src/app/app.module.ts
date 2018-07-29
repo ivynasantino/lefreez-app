@@ -15,6 +15,7 @@ import { LivroPage } from '../pages/livro/livro';
 import { Camera } from '@ionic-native/camera';
 import { StreamingMedia } from '@ionic-native/streaming-media';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+import { InfolivroPage } from '../pages/infolivro/infolivro';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
     HomePage,
     LivrariaPage,
     TabsPage,
-    LivroPage
+    LivroPage,
+    InfolivroPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
     HomePage,
     LivrariaPage,
     TabsPage,
-    LivroPage
+    LivroPage,
+    InfolivroPage
   ],
   providers: [
     StatusBar,

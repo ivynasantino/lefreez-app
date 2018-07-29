@@ -5,7 +5,7 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
+<!--
 <ion-content>
   <ion-searchbar (ionInput)="getLivroLivraria($event)"></ion-searchbar>
   <ion-list>
@@ -13,4 +13,14 @@
       {{ livroLivraria }}
     </ion-item>
   </ion-list>
+</ion-content>
+-->
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col (click)="getInfo(livroLivraria)" col-4 class="box" *ngFor="let livroLivraria of livrariaLivros">
+        {{ livroLivraria }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

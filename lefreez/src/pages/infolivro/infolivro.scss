@@ -1,0 +1,23 @@
+page-infolivro {
+p {
+    line-height: 30%;
+}
+
+p.titulo {
+    font-size: 20px;
+    color: color($colors, cinza1);
+}
+
+p.autor {
+    color: color($colors, cinza2);
+}
+
+.botoes {
+    position: absolute;
+    bottom: 10px;
+}
+
+ion-col button ion-icon{
+    font-size: 20px;
+}
+}

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { InfolivroPage } from '../infolivro/infolivro'
+
 
 @IonicPage()
 @Component({
@@ -8,7 +10,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LivrariaPage {
 
-  livrariaLivros: string[];
+  livrariaLivros:any = [
+    {"titulo":"As crônicas de Nárnia",
+     "url":"",
+     "preço":""
+    },
+    {"titulo":"Dom Casmurro",
+     "url":"",
+     "preço":""
+    },
+    {"titulo":"Gabriela cravo e canela",
+     "url":"",
+     "preço":""
+    },
+    {"titulo":"Iracema",
+     "url":"",
+     "preço":""
+    },
+    {"titulo":"Memórias póstumas de Brás Cubas",
+     "url":"",
+     "preço":""
+    }
+  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.iniciaLivraria();
@@ -48,6 +71,10 @@ export class LivrariaPage {
       })
     }
 
+  }
+
+  getInfo(liv: any) {
+    this.navCtrl.push(InfolivroPage, liv)
   }
 
 }
